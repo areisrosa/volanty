@@ -1,0 +1,102 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/api/v1/status":
+    get:
+      summary: return ok
+      tags:
+        - Healthcheck
+      description: Endpoint for health check
+      responses:
+        '200':
+          description: status ok
+"/api/v1/cav":
+    get:
+      summary:
+      tags:
+        - Cav
+      description:
+      parameters:
+        - name: cav
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: status ok
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  name:
+                    type: string
+        '404':
+          description: not found
+  "/api/v1/cav/{id}":
+    get:
+      summary:
+      tags:
+        - Cav
+      description:
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: number
+      responses:
+        '200':
+          description: status ok
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  name:
+                    type: string
+        '404':
+          description: not found
+  "/api/v1/cav/{id}/inspection":
+    post:
+      summary: Publish an inspection
+      tags:
+        - Cav
+      description: Publish/Transmit an inspection
+      parameters:
+        - name: inspection
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '201':
+          description: status ok
+        '404':
+          description: CAV not found
+  "/api/v1/cav/{id}/visit":
+    post:
+      summary: Publish an visit
+      tags:
+        - Cav
+      description: Publish/Transmit an visit
+      parameters:
+        - name: visit
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '201':
+          description: status ok
+        '404':
+          description: CAV not found
+servers:
+  - url: https://{defaultHost}
+    variables:
+      defaultHost:
+        default: www.example.com

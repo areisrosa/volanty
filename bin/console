@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+
+require "bundler/setup"
+require "volanty"
+require "pry"
+require "irb"
+
+Pry.start
+IRB.start(__FILE__)
