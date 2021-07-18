@@ -89,8 +89,9 @@ $ cp .env.test .env # (Teste)
 $ docker-compose build
 ```
 
-> :warning: **WARNING**: Se você fizer mudanças no arquivo **Gemfile** rode este 
-> comando novamente.
+> :warning: **WARNING**: Se você estiver executando o Docker no Linux, os
+> arquivos recém-criados pertencem ao root, portanto, altere a propriedade dos
+> novos arquivos com o seguinte comando `sudo chown -R $USER:$USER .`
 
 ### Subindo os containers em <em>background</em>
 
