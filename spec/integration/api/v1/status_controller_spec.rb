@@ -9,7 +9,7 @@ describe 'StatusController' do
       description 'Endpoint for health check'
       consumes 'application/json'
 
-      respose '200', 'status ok' do
+      response '200', 'status ok' do
         run_test!
       end
     end

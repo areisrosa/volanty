@@ -1,5 +1,8 @@
 # frozen_string_literal: true
 
+require 'spec_helper'
+require 'logger'
+
 require './lib/adapters/http'
 require './lib/exceptions/conflict'
 require './lib/exceptions/external_request_fail'
